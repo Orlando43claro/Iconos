@@ -1,110 +1,58 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
 }
 
-/* Encabezado */
 header {
-    margin-bottom: 20px;
+    text-align: center;
+    margin: 20px;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #333;
-}
-
-/* Estilos de la cuadrícula de iconos */
 .icon-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 20px;
-    width: 90%;
-    max-width: 1200px;
 }
 
 .icon-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background: white;
     padding: 20px;
-    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.icon-card:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .icon-card img {
     width: 100px;
-    height: auto;
+    height: 100px;
 }
 
-.icon-card p {
+.icon-card .progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
     margin-top: 10px;
-    font-size: 1rem;
-    color: #555;
-    text-align: center;
+    border-radius: 5px;
+    display: none; /* Oculto por defecto */
 }
 
-/* Botón de descarga */
-.download-btn {
+.icon-card .progress-bar .progress {
+    height: 100%;
+    background: green;
+    width: 0%; /* Inicia en 0% */
+    border-radius: 5px;
+}
+
+button {
     margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #4caf50;
+    padding: 10px 20px;
+    background-color: #007bff;
     color: white;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    border-radius: 5px;
 }
 
-.download-btn:hover {
-    background-color: #388e3c;
-}
-
-/* Barra de progreso */
-.progress-bar {
-    width: 100%;
-    height: 5px;
-    background-color: #f0f0f0;
-    margin-top: 10px;
-    border-radius: 2px;
-    overflow: hidden;
-    display: none;
-}
-
-.progress-bar::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 100%;
-    background-color: #4caf50;
-    transition: width 0.5s ease;
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .icon-card img {
-        width: 80px;
-    }
-
-    .icon-card p {
-        font-size: 0.875rem;
-    }
+button:hover {
+    background-color: #0056b3;
 }
